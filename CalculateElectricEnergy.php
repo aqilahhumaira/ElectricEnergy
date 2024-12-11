@@ -2,16 +2,16 @@
 // Function to calculate power, energy, and total charge
 function calculate_charge($voltage, $current, $rate, $hours) {
     // Calculate Power in Watt-hour (Wh)
-    $power = $voltage * $current; // Power in Watt (W)
+    $power = $voltage * $current; 
     
     // Convert Power to kW by dividing by 1000
-    $power_kw = $power / 1000; // Power in Kilowatts (kW)
+    $power_kw = $power / 1000; 
     
     // Calculate Energy in kWh
-    $energy = ($power_kw * $hours); // Energy in kWh
+    $energy = ($power_kw * $hours); 
     
     // Calculate Total Charge (in RM)
-    $total_charge = $energy * ($rate / 100); // Total charge in RM
+    $total_charge = $energy * ($rate / 100); 
     
     return [
         'power' => $power_kw,  // Power in kW
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ];
     }
     
-    // Calculate Power and Energy for 1 hour for display
+    // Calculate Power and Energy for 1 hour
     $power = $voltage * $current;
     $power_kw = $power / 1000; // Power in Kilowatts (kW)
     $energy = ($power_kw * 1); // Energy for 1 hour
@@ -100,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <td><?php echo $index + 1; ?></td>
                         <td><?php echo $result['hour']; ?></td>
                         <td><?php echo number_format($result['energy'], 5); ?></td>
-                        <td><?php echo number_format($result['total_charge'], 2); ?></td> <!-- Round to 2 decimal places -->
+                        <td><?php echo number_format($result['total_charge'], 2); ?></td> 
                     </tr>
                     <?php endforeach; ?>
                 </tbody>
