@@ -24,7 +24,6 @@ $power = $energy = $total_charge = 0;
 $hours_list = range(1, 24); // For hours 1 to 24
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Get the form data
     $voltage = $_POST['voltage'];
     $current = $_POST['current'];
     $rate = $_POST['rate'];
